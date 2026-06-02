@@ -4,12 +4,12 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Plugin Name: Reviews Importer
  * Description: Import testimonials (us_testimonial).
- * Version:     1.0.9
+ * Version:     1.1.0
  * Author:      Bent Becker
  * GitHub Plugin URI: https://github.com/BentBecker/impreza-review-importer
  */
 
-define( 'RI_VERSION', '1.0.9' );
+define( 'RI_VERSION', '1.1.0' );
 define( 'RI_FILE', __FILE__ );
 define( 'RI_DIR', plugin_dir_path( __FILE__ ) );
 define( 'RI_URL', plugin_dir_url( __FILE__ ) );

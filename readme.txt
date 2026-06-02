@@ -4,7 +4,7 @@ Tags: reviews, testimonials, importer, impreza, us_testimonial
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.0.9
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,6 +73,9 @@ Yes. Add the following line to `wp-config.php`:
 2. Shortcodes tab — copy shortcodes and see a live preview.
 
 == Changelog ==
+
+= 1.1.0 =
+* Version bump — stable release of all features added since 1.0.7.
 
 = 1.0.9 =
 * Added `ri_has_content` custom field (value `1` or `0`) to every imported testimonial.
