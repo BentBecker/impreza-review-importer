@@ -6,6 +6,16 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.0.8] – 2026-06-02
+
+### Fixed
+- Removed `@` error-suppression operator from `ini_set` call in the AJAX
+  import handler — errors are now handled properly instead of silently masked.
+- Added a 5 MB payload size cap on `$_POST['items']` before `json_decode` to
+  prevent memory exhaustion from oversized requests (returns HTTP 413).
+
+---
+
 ## [1.0.7] – 2026-06-02
 
 ### Added
