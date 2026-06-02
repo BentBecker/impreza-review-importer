@@ -4,12 +4,12 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Plugin Name: Reviews Importer
  * Description: Import testimonials (us_testimonial).
- * Version:     1.0.8
+ * Version:     1.0.9
  * Author:      Bent Becker
  * GitHub Plugin URI: https://github.com/BentBecker/impreza-review-importer
  */
 
-define( 'RI_VERSION', '1.0.8' );
+define( 'RI_VERSION', '1.0.9' );
 define( 'RI_FILE', __FILE__ );
 define( 'RI_DIR', plugin_dir_path( __FILE__ ) );
 define( 'RI_URL', plugin_dir_url( __FILE__ ) );
@@ -403,6 +403,11 @@ function ri_insert_testimonial( array $item, $default_cat, $duplicate ) {
 	if ( $review_id ) {
 		update_post_meta( $post_id, 'ri_review_id', $review_id );
 	}
+
+	// Flag whether this review has body text. Use in Impreza to
+	// conditionally show/hide the content element:
+	//   Conditions → Custom field "ri_has_content" equals "1"
+	update_post_meta( $post_id, 'ri_has_content', trim( $content ) !== '' ? '1' : '0' );
 
 	// Taxonomy.
 	if ( $cat ) {
