@@ -1,0 +1,138 @@
+﻿/* ==========================================================================
+   Reviews Importer — Frontend Styles
+   ========================================================================== */
+
+/* ---- Stars (Font Awesome 5) ----------------------------------------------- */
+.ri-stars {
+	display: inline-flex;
+	align-items: center;
+	gap: 2px;
+	line-height: 1;
+	font-size: 1em;
+}
+
+.ri-star {
+	font-size: inherit;
+}
+
+/* Full and half stars use the component's --ri-star custom property */
+.ri-star--full,
+.ri-star--half {
+	color: var(--ri-star, #f59e0b);
+}
+
+.ri-star--empty {
+	color: #d1d5db;
+}
+
+/* ---- Rating Summary (Figma 2268-10502) ------------------------------------ */
+.ri-summary {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	font-family: inherit;
+}
+
+.ri-summary__score {
+	font-size: 2.5rem;
+	font-weight: 800;
+	color: var(--ri-score, #0f1932);
+	line-height: 1;
+	white-space: nowrap;
+}
+
+.ri-summary__right {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.ri-summary__stars {
+	font-size: 1rem;
+	line-height: 1;
+}
+
+.ri-summary__label {
+	margin: 0;
+	font-size: 0.85rem;
+	color: var(--ri-label, #6b7280);
+	line-height: 1.4;
+}
+
+/* ---- Rating Bars (Figma 2268-10519) --------------------------------------- */
+.ri-bars {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	width: 100%;
+}
+
+.ri-bars__row {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.ri-bars__label {
+	width: 16px;
+	font-size: 0.75rem;
+	font-weight: 800;
+	color: var(--ri-text, #0f1932);
+	flex-shrink: 0;
+	text-align: left;
+}
+
+.ri-bars__track {
+	flex: 1 0 0;
+	height: 8px;
+	background-color: var(--ri-track, #f3f4f6);
+	border-radius: 99px;
+	position: relative;
+	overflow: hidden;
+}
+
+.ri-bars__fill {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background-color: var(--ri-bar, #152d4c);
+	border-radius: 99px;
+	transition: width 0.4s ease;
+}
+
+.ri-bars__count {
+	width: 24px;
+	font-size: 0.75rem;
+	font-weight: 800;
+	color: var(--ri-text, #0f1932);
+	flex-shrink: 0;
+	text-align: right;
+}
+
+/* ---- Rating Badge (Figma 2268-10147 — compact inline) --------------------- */
+.ri-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	line-height: 1;
+	font-family: inherit;
+}
+
+.ri-badge__score {
+	font-size: 0.95rem;
+	font-weight: 800;
+	color: var(--ri-score, #0f1932);
+	white-space: nowrap;
+}
+
+.ri-badge__stars {
+	font-size: 0.85rem;
+	line-height: 1;
+}
+
+.ri-badge__count {
+	font-size: 0.8rem;
+	color: var(--ri-count, #6b7280);
+	white-space: nowrap;
+}

@@ -1,0 +1,259 @@
+﻿.ri-wrap {
+	max-width: 800px;
+}
+
+.ri-schema {
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	padding: 10px 16px;
+	margin-bottom: 20px;
+}
+
+.ri-schema summary {
+	cursor: pointer;
+	font-weight: 600;
+	color: #2271b1;
+}
+
+.ri-schema pre {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	padding: 10px 14px;
+	border-radius: 3px;
+	overflow-x: auto;
+	font-size: 13px;
+	margin: 10px 0 0;
+}
+
+.ri-bar-wrap {
+	background: #dcdcde;
+	border-radius: 4px;
+	height: 14px;
+	width: 400px;
+	margin-top: 8px;
+	overflow: hidden;
+}
+
+#ri-bar {
+	height: 100%;
+	width: 0;
+	background: #2271b1;
+	border-radius: 4px;
+	transition: width 0.2s ease;
+}
+
+#ri-log {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	max-height: 400px;
+	overflow-y: auto;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+}
+
+#ri-log li {
+	padding: 6px 12px;
+	border-bottom: 1px solid #f0f0f0;
+	font-size: 13px;
+}
+
+#ri-log li:last-child {
+	border-bottom: none;
+}
+
+#ri-log li.status-inserted { color: #1d8348; }
+#ri-log li.status-updated  { color: #2271b1; }
+#ri-log li.status-skipped  { color: #888; }
+#ri-log li.status-error    { color: #c0392b; font-weight: 600; }
+
+/* ---- Shortcodes Tab ------------------------------------------------------- */
+.ri-tabs {
+	margin-bottom: 0;
+}
+
+.ri-tab-content {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-top: none;
+	padding: 20px 24px;
+	margin-bottom: 20px;
+}
+
+.ri-sc-builder {
+	max-width: 1040px;
+}
+
+/* Template picker — full-width row of cards */
+.ri-sc-tpl-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 24px;
+}
+
+.ri-sc-tpl-item {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 14px;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	cursor: pointer;
+	background: #f9f9f9;
+	transition: border-color 0.15s, background 0.15s;
+	flex: 1 0 160px;
+}
+
+.ri-sc-tpl-item:has(input:checked) {
+	border-color: #2271b1;
+	background: #f0f6fc;
+}
+
+.ri-sc-tpl-label {
+	flex: 1;
+	font-weight: 600;
+	font-size: 13px;
+}
+
+.ri-sc-tpl-tag {
+	font-size: 11px;
+	color: #646970;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	padding: 2px 5px;
+	border-radius: 3px;
+}
+
+/* Two-column layout: options | preview */
+.ri-sc-layout {
+	display: grid;
+	grid-template-columns: 260px 1fr;
+	gap: 32px;
+	align-items: start;
+}
+
+/* Options panel */
+.ri-sc-opts {
+	background: #f9f9f9;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	padding: 16px;
+}
+
+.ri-sc-field {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	margin-bottom: 14px;
+}
+
+.ri-sc-field:last-child {
+	margin-bottom: 0;
+}
+
+.ri-sc-field-label {
+	font-size: 12px;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.ri-sc-field select,
+.ri-sc-field input[type="text"] {
+	width: 100%;
+	max-width: 100%;
+}
+
+/* Color picker row */
+.ri-sc-color-wrap {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.ri-sc-color-wrap input[type="color"] {
+	width: 36px;
+	height: 30px;
+	padding: 2px;
+	border: 1px solid #dcdcde;
+	border-radius: 3px;
+	background: #fff;
+	cursor: pointer;
+}
+
+.ri-sc-color-value {
+	font-size: 12px;
+	font-family: monospace;
+	color: #646970;
+	flex: 1;
+}
+
+.ri-sc-color-reset {
+	font-size: 16px;
+	color: #646970;
+	padding: 0 4px;
+	line-height: 1;
+	text-decoration: none;
+}
+
+.ri-sc-color-reset:hover {
+	color: #c0392b;
+}
+
+/* Output panel */
+.ri-sc-output h3 {
+	font-size: 13px;
+	font-weight: 600;
+	margin: 0 0 8px;
+	padding-bottom: 6px;
+	border-bottom: 1px solid #dcdcde;
+	color: #1d2327;
+}
+
+.ri-sc-output h3 + h3 {
+	margin-top: 20px;
+}
+
+/* Preview box */
+.ri-sc-preview {
+	min-height: 100px;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	background: #fff;
+	padding: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.ri-preview-placeholder {
+	margin: 0;
+	font-size: 13px;
+	color: #646970;
+	font-style: italic;
+}
+
+.ri-preview-error {
+	color: #c0392b;
+}
+
+/* Shortcode code output */
+.ri-sc-code-wrap {
+	display: flex;
+	align-items: stretch;
+	gap: 8px;
+}
+
+.ri-sc-code {
+	flex: 1;
+	display: block;
+	padding: 10px 14px;
+	background: #1d2327;
+	color: #a8c7fa;
+	border-radius: 4px;
+	font-size: 13px;
+	word-break: break-all;
+	min-height: 42px;
+	line-height: 1.6;
+}

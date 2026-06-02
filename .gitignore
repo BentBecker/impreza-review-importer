@@ -1,0 +1,26 @@
+# WordPress
+*.log
+*.cache
+.htaccess
+wp-config.php
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependencies (if ever added)
+/vendor/
+/node_modules/
+
+# Build output
+*.min.js
+*.min.css
+
+# Secrets — never commit tokens
