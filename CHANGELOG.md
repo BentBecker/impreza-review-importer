@@ -6,6 +6,16 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.0.9] – 2026-06-02
+
+### Added
+- `ri_has_content` meta field saved on every imported testimonial (`1` = has
+  body text, `0` = stars only). Use this in Impreza element **Conditions** to
+  hide the content block for star-only reviews:
+  *Custom field `ri_has_content` equals `1`*.
+
+---
+
 ## [1.0.8] – 2026-06-02
 
 ### Fixed
