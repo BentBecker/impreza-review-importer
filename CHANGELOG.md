@@ -6,6 +6,15 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.1.0] – 2026-06-02
+
+### Changed
+- Version bump to mark stable production release of all features
+  added since 1.0.7 (GitHub updater, `ri_has_content` meta field,
+  security hardening).
+
+---
+
 ## [1.0.9] – 2026-06-02
 
 ### Added
