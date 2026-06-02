@@ -4,12 +4,12 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Plugin Name: Reviews Importer
  * Description: Import testimonials (us_testimonial).
- * Version:     1.0.7
+ * Version:     1.0.8
  * Author:      Bent Becker
  * GitHub Plugin URI: https://github.com/BentBecker/impreza-review-importer
  */
 
-define( 'RI_VERSION', '1.0.7' );
+define( 'RI_VERSION', '1.0.8' );
 define( 'RI_FILE', __FILE__ );
 define( 'RI_DIR', plugin_dir_path( __FILE__ ) );
 define( 'RI_URL', plugin_dir_url( __FILE__ ) );
@@ -297,7 +297,7 @@ function ri_shortcodes_tab( $categories ) {
  */
 function ri_ajax_import() {
 	// Suppress debug output so JSON response stays clean.
-	@ini_set( 'display_errors', '0' ); // phpcs:ignore
+	ini_set( 'display_errors', '0' ); // phpcs:ignore
 
 	check_ajax_referer( 'ri_import_nonce', 'nonce' );
 
@@ -305,9 +305,14 @@ function ri_ajax_import() {
 		wp_send_json_error( __( 'Insufficient permissions.', 'reviews-importer' ), 403 );
 	}
 
-	$raw_items  = isset( $_POST['items'] ) ? wp_unslash( $_POST['items'] ) : '';
+	$raw_items   = isset( $_POST['items'] ) ? wp_unslash( $_POST['items'] ) : '';
 	$default_cat = isset( $_POST['category'] ) ? sanitize_text_field( wp_unslash( $_POST['category'] ) ) : '';
 	$duplicate   = isset( $_POST['duplicate'] ) ? sanitize_text_field( wp_unslash( $_POST['duplicate'] ) ) : 'skip';
+
+	// Guard against excessively large payloads (5 MB limit).
+	if ( strlen( $raw_items ) > 5 * 1024 * 1024 ) {
+		wp_send_json_error( __( 'Payload too large. Split the JSON into smaller chunks.', 'reviews-importer' ), 413 );
+	}
 
 	$items = json_decode( $raw_items, true );
 
